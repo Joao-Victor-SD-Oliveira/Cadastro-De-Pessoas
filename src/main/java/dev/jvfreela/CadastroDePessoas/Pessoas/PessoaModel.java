@@ -1,7 +1,6 @@
-package dev.jvfreela.CadastroDePessoas;
+package dev.jvfreela.CadastroDePessoas.Pessoas;
 
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Table (name = "tb_cadastro")
@@ -10,7 +9,7 @@ public class PessoaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
+    private String nome;
     private String email;
     private int idade;
 
@@ -18,17 +17,17 @@ public class PessoaModel {
     }
 
     public PessoaModel(String name, int idade, String email) {
-        this.name = name;
+        this.nome = name;
         this.idade = idade;
         this.email = email;
     }
 
     public String getName() {
-        return name;
+        return nome;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nome = name;
     }
 
     public String getEmail() {
